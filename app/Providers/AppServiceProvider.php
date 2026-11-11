@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\Auth\AuthRepositoryInterface;
+use App\Repositories\Implementasi\Auth\AuthRepository;
+use App\Services\Contracts\Auth\AuthServiceInterface;
+use App\Services\Implementasi\Auth\AuthService;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\Contracts\KostRepositoryInterface;
 use App\Repositories\Implementasi\KostRepository;
@@ -11,9 +15,6 @@ use App\Services\Implementasi\KostServices;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
 
@@ -23,11 +24,10 @@ class AppServiceProvider extends ServiceProvider
 
         );
         //
+        $this->app->bind(AuthRepositoryInterface::class, AuthRepository::class);
+        $this->app->bind(AuthServiceInterface::class, AuthService::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         //
