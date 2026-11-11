@@ -1,10 +1,10 @@
 <?php
 
-    namespace App\Repositories\Implementation;
+    namespace App\Repositories\Implementasi;
 
 
     use App\Models\Kost;
-    use App\Repositories\Interfaces\KostRepositoryInterface;
+    use App\Repositories\Contracts\KostRepositoryInterface;
 
 
     class KostRepository implements KostRepositoryInterface {
@@ -22,6 +22,10 @@
 
             return Kost::create($getinput);
 
+        }
+
+        public function create_kategori(array $data) {
+            
         }
     }
 
