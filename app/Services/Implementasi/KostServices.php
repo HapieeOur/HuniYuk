@@ -1,10 +1,10 @@
 <?php
 
-    namespace App\Services\Implementation;
+    namespace App\Services\Implementasi;
 
 
-    use App\Repositories\Interfaces\KostRepositoryInterface;
-    use App\Services\Interfaces\KostServicesInterface;
+    use App\Repositories\Contracts\KostRepositoryInterface;
+    use App\Services\Contracts\KostServicesInterface;
 
     class KostServices implements KostServicesInterface {
 

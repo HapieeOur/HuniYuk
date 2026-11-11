@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Helpers;
-use App\Services\Implementation\KostServices;
+use App\Helpers\ResponseHandler;
+use App\Services\Implementasi\KostServices;
 use App\Http\Resources\KostResource;
 use App\Http\Requests\KostRequest;
+use Throwable;
 
 class KostController extends Controller
 {
@@ -24,9 +24,23 @@ class KostController extends Controller
 
         try {
 
-            
+            $data_kost = $this->kostservices->tambah_kost($request->validated());
 
-          
+            return ResponseHandler::success(
+                "kost berhasil ditambahkan",
+
+                new KostResource($data_kost)
+            );
+
+        }catch(Throwable $e) {
+
+            return ResponseHandler::error(
+
+                "kost gagal ditambahkan",
+                $data_kost
+
+
+            );
 
         }
 

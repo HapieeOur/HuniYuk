@@ -16,9 +16,9 @@ class KostResource extends JsonResource
     {
         return [
 
-            "id" => $this->id,
+            "id" => $this->kost_id,
             "nama_kost" => $this->nama_kost,
-            "jumlah_kamar" => $this->jumlah_kost,
+            "jumlah_kamar" => $this->jumlah_kamar,
             "status_kamar" => $this->status_kamar
 
         ];

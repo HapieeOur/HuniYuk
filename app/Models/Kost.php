@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kost extends Model
 {
+    protected $primaryKey = 'kost_id';
     protected $table = "kosts";
 
     protected $fillable = [
@@ -15,5 +16,13 @@ class Kost extends Model
         "status_kamar",
 
     ];
+
+
+    protected function casts(): array
+    {
+        return [
+            'jumlah_kamar' => 'integer',
+        ];
+    }
     //
 }

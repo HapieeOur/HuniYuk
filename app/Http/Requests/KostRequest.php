@@ -24,7 +24,7 @@ class KostRequest extends FormRequest
     {
         return [
 
-            'nama_kost' => 'required|min:15|string',
+            'nama_kost' => 'required|max:15|string',
             'jumlah_kamar' => 'required|integer',
             'status_kamar' => 'required|string'
             //
